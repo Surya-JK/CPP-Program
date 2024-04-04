@@ -16,3 +16,5 @@ int main()
 	int a=103;
 	cout<<"Reverse: "<<rev(a);
 	return 0;
+}
+
