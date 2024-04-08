@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+long long int factorial(int n) 
+{
+    if (n == 0)
+        return 1;
+    else
+        return n * factorial(n - 1);
+}
+double factorial(double n) 
+{
+    return tgamma(n + 1);
+}
+int main() 
+{
+    int intNum;
+    double floatNum;
+    cout << "Enter an integer number: ";
+    cin >> intNum;
+    cout << "Factorial of the integer " << intNum << " is: " << factorial(intNum) << endl;
+    cout << "Enter a floating-point number: ";
+    cin >> floatNum;
+    cout << "Factorial of the floating-point " << floatNum << " is: " << factorial(floatNum) << endl;
+    return 0;
+}
