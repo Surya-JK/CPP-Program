@@ -1,0 +1,30 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Car 
+{
+public:
+    Car(string make, string model, int year) 
+    {
+        cout << "Car object created: " << make << " " << model << " (" << year << ")" << endl;
+        m_make = make;
+        m_model = model;
+        m_year = year;
+    }
+    ~Car()
+    {
+        cout << "Car object destroyed: " << m_make << " " << m_model << " (" << m_year << ")" << endl;
+    }
+public:
+    string m_make;
+    string m_model;
+    int m_year;
+};
+int main() 
+{
+    Car car("Toyota", "Camry", 2022);
+    cout << "Car make: " << car.m_make << endl;
+    cout << "Car model: " << car.m_model << endl;
+    cout << "Car year: " << car.m_year << endl;
+    return 0;
+}
