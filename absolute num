@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+template <typename a>
+a absolute(a num) 
+{
+    return num < 0 ? -num : num;
+}
+int main() 
+{
+    int intNum = -5;
+    float floatNum = -3.14;
+    cout << "Absolute value of integer number: " << absolute(intNum) <<endl;
+    cout << "Absolute value of floating-point number: " << absolute(floatNum) <<endl;
+
+    return 0;
+}
