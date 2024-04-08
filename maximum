@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+int find(int a, int b) 
+{
+    return (a > b) ? a : b;
+}
+float Max(float a, float b) 
+{
+    return (a > b) ? a : b;
+}
+char findMax(char a, char b) 
+{
+    return (a > b) ? a : b;
+}
+
+int main() 
+{
+    int intMax = findMax(10, 20);
+    float floatMax = findMax(3.14, 2.71);
+    char charMax = findMax('a', 'z');
+    cout << "Maximum of integers: " << intMax << endl;
+    cout << "Maximum of floating-point numbers: " << floatMax << endl;
+    cout << "Maximum of characters: " << charMax << endl;
+    return 0;
+}
