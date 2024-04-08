@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Book 
+{
+private:
+    string title;
+    string author;
+public:
+    Book(string bookTitle, string bookAuthor) : title(bookTitle), author(bookAuthor) 
+    {
+        cout << "Creating a book: " << title << " by " << author <<endl;
+    }
+    ~Book() 
+    {
+        cout << "Destroying the book: " << title << endl;
+    }
+};
+int main() 
+{
+    Book myBook("Avengers Endgame", "Russo Brothers");
+    return 0;
+}
