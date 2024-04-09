@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+class Shape {
+protected:
+    double height;
+    double width;a
+
+public:
+    Shape(double h, double w) : height(h), width(w) {}
+
+    virtual double calculateArea() = 0;
+    virtual double calculatePerimeter() = 0;
+};
+
+class Rectangle : public Shape {
+public:
+    Rectangle(double h, double w) : Shape(h, w) {}
+
+    double calculateArea() override {
+        return height * width;
+    }
+
+    double calculatePerimeter() override {
+        return 2 * (height + width);
+    }
+};
+
+class Triangle : public Shape {
+public:
+    Triangle(double h, double w) : Shape(h, w) {}
+
+    double calculateArea() override {
+        return 0.5 * height * width;
+    }
+
+    double calculatePerimeter() override {
+        return 3 * height;
+    }
+};
+
+int main() {
+    Rectangle rect(5, 10);
+    Triangle tri(4, 6);
+
+    cout << "Rectangle Area: " << rect.calculateArea() << endl;
+    cout << "Rectangle Perimeter: " << rect.calculatePerimeter() << endl;
+    cout << "Triangle Area: " << tri.calculateArea() << endl;
+    cout << "Triangle Perimeter: " << tri.calculatePerimeter() << endl;
+    return 0;
+}
