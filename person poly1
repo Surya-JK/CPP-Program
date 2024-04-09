@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Person {
+public:
+    virtual string greet() {
+        return "Hello, I am a person.";
+    }
+};
+
+class Student : public Person {
+public:
+    string major;
+
+    string greet() override {
+        return "Hello, I am a student majoring in " + major + ".";
+    }
+};
+
+class Teacher : public Person {
+public:
+    string subject;
+
+    string greet() override {
+        return "Hello, I am a teacher of " + subject + ".";
+    }
+};
+
+int main() {
+    Student student;
+    student.major = "Computer Science";
+    Teacher teacher;
+    teacher.subject = "English";
+
+    cout << student.greet() << endl; 
+    cout << teacher.greet() << endl;  
+
+    return 0;
+}
