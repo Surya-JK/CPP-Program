@@ -1,0 +1,100 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Employee {
+protected:
+    string name;
+    int id;
+    double salary;
+
+public:
+    void setName(const string& empName) {
+        name = empName;
+    }
+
+    void setID(int empID) {
+        id = empID;
+    }
+
+    void setSalary(double empSalary) {
+        salary = empSalary;
+    }
+
+    string getName() const {
+        return name;
+    }
+
+    int getID() const {
+        return id;
+    }
+
+    double getSalary() const {
+        return salary;
+    }
+};
+
+class Manager : public Employee {
+private:
+    string department;
+    double bonus;
+
+public:
+    void setDepartment(const string& dept) {
+        department = dept;
+    }
+
+    void setBonus(double empBonus) {
+        bonus = empBonus;
+    }
+
+    string getDepartment() const {
+        return department;
+    }
+
+    double getBonus() const {
+        return bonus;
+    }
+};
+
+class Engineer : public Employee {
+private:
+    string specialty;
+    int hours;
+
+public:
+    void setSpecialty(const string& spec) {
+        specialty = spec;
+    }
+
+    void setHours(int workHours) {
+        hours = workHours;
+    }
+
+    string getSpecialty() const {
+        return specialty;
+    }
+
+    int getHours() const {
+        return hours;
+    }
+};
+
+int main() {
+    Manager manager;
+    manager.setName("SJK");
+    manager.setID(101);
+    manager.setSalary(75000.0);
+    manager.setDepartment("Engineering");
+    manager.setBonus(5000.0);
+
+    Engineer engineer;
+    engineer.setName("Sanjai");
+    engineer.setID(201);
+    engineer.setSalary(65000.0);
+    engineer.setSpecialty("Software Development");
+    engineer.setHours(40);
+    cout << "Manager: " << manager.getName() << ", ID: " << manager.getID() << ", Salary: $" << manager.getSalary() << ", Department: " << manager.getDepartment() << ", Bonus: $" << manager.getBonus() << endl;
+    cout << "Engineer: " << engineer.getName() << ", ID: " << engineer.getID() << ", Salary: $" << engineer.getSalary() << ", Specialty: " << engineer.getSpecialty() << ", Hours: " << engineer.getHours() << endl;
+
+    return 0;
+}
