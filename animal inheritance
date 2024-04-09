@@ -1,0 +1,119 @@
+#include <iostream>
+using namespace std;
+
+class Animal {
+  private:
+    string name;
+    string species;
+    int age;
+
+  public:
+    Animal(string n, string s, int a) {
+      name = n;
+      species = s;
+      age = a;
+    }
+
+    string getName() {
+      return name;
+    }
+
+    void setName(string n) {
+      name = n;
+    }
+
+    string getSpecies() {
+      return species;
+    }
+
+    void setSpecies(string s) {
+      species = s;
+    }
+
+    int getAge() {
+      return age;
+    }
+
+    void setAge(int a) {
+      age = a;
+    }
+};
+
+class Cat : public Animal {
+  private:
+    string color;
+    string breed;
+
+  public:
+    Cat(string n, string s, int a, string c, string b)
+        : Animal(n, s, a) {
+      color = c;
+      breed = b;
+    }
+
+    string getColor() {
+      return color;
+    }
+
+    void setColor(string c) {
+      color = c;
+    }
+
+    string getBreed() {
+      return breed;
+    }
+
+    void setBreed(string b) {
+      breed = b;
+    }
+};
+
+class Dog : public Animal {
+  private:
+    int weight;
+    string breed;
+
+  public:
+    Dog(string n, string s, int a, int w, string b)
+        : Animal(n, s, a) {
+      weight = w;
+      breed = b;
+    }
+
+    int getWeight() {
+      return weight;
+    }
+
+    void setWeight(int w) {
+      weight = w;
+    }
+
+    string getBreed() {
+      return breed;
+    }
+
+    void setBreed(string b) {
+      breed = b;
+    }
+};
+
+int main() {
+  Cat cat("Whiskers", "Cat", 2, "Gray", "Domestic");
+  Dog dog("Buddy", "Dog", 3, 25, "Labrador");
+
+  cout << "Cat: " << endl;
+  cout << "Name: " << cat.getName() << endl;
+  cout << "Species: " << cat.getSpecies() << endl;
+  cout << "Age: " << cat.getAge() << endl;
+  cout << "Color: " << cat.getColor() << endl;
+  cout << "Breed: " << cat.getBreed() << endl;
+
+  cout << "Dog: " << endl;
+  cout << "Name: " << dog.getName() << endl;
+  cout << "Species: " << dog.getSpecies() << endl;
+  cout << "Age: " << dog.getAge() << endl;
+  cout << "Weight: " << dog.getWeight() << endl;
+  cout << "Breed: " << dog.getBreed() << endl;
+
+  return 0;
+}
